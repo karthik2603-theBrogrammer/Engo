@@ -18,7 +18,7 @@
 - Engo supports representations like `ASTs (Abstract Syntax Trees)` and `DAGs (Directed Acyclic Graphs)` to optimize rule processing.
 - The UI, built using **React Flow**, allows interactive visualizations of these rule structures. 
 
-<details>
+
 <summary><h1>⚖️ AST vs DAG Comparison</h1></summary>
 
 |  **AST (Abstract Syntax Tree)**         | **DAG (Directed Acyclic Graph)**       |
@@ -26,10 +26,10 @@
 | <p align="center"><img width="468" alt="Screenshot 2024-10-21 at 12 34 57 AM" src="https://github.com/user-attachments/assets/3a4a4786-48a5-477a-85f8-82638ddb67ec"></p> | <p align="center"><img width="450" alt="Screenshot 2024-10-21 at 12 35 04 AM" src="https://github.com/user-attachments/assets/759bb37f-5bb6-4f99-8a3c-6e8066a8354c"></p> |
 | Represents the syntax of a rule. It is commonly used in compilers for code analysis. Compiler first creates a parse tree (Concrete Syntax Tree) which is converted to an Syntax tree (Abstract Syntax). | Represents a compressed form of an AST. In large-scale applications with complex expressions, DAGs significantly reduce storage and eliminate redundant computations. |
 
-</details>
 
 
-<details>
+
+
 <summary><h1>Engo's Tokenizer</h1></summary>
 
 - A code-snippet from Engo's Tokenizer. Can parse numbers, attributes, functions (custom user-defined), left and right parantheses, comma andlogical operator in order of precedence (AND, OR, NOT).
@@ -51,10 +51,10 @@ token_specification = [
     ('MISMATCH', r'.'),             # Any other character
 ]
 ```
-</details>
 
 
-<details>
+
+
 <summary><h1>Engo's Structure</h1></summary>
 
 Engo supports the following types of nodes:
@@ -99,10 +99,10 @@ Engo supports the following types of nodes:
      ```
      This represents a variable node with the value `salary`.
 
-</details>
 
 
-<details>
+
+
 <summary><h1>🔗 Features of Engo</h1></summary>
 
 | Feature | Function | Description |
@@ -115,10 +115,7 @@ Engo supports the following types of nodes:
 | **Change Operator** | `change_operator(target_id:str, new_operator:str)` | Changes the operator of an operator or condition node. |
 | **Change Operand** | `change_operand(target_id:str, new_left_operand:Node, new_right_operand:Node)` | Modifies the left or right operand of a condition node. |
 
-</details>
 
-
-<details>
 <summary><h1>Custom Functions Supported</h1></summary>
   
 | Function | Description |
@@ -131,9 +128,7 @@ Engo supports the following types of nodes:
 | **min(x, y)** | Returns the minimum value between `x` and `y`. |
 | **abs(x)** | Returns the absolute value of `x`. |
 
-</details>
 
-<details>
 <summary><h1>How to setup Engo</h1></summary>
 
 
@@ -166,11 +161,8 @@ docker exec -it postgres_db psql -U postgres -d postgres
 docker-compose -f docker-compose-prod.yaml up
 ```
 - And thats it! 🎉
-</details>
 
 
-
-<details>
 <summary><h1>📝 How to run and use Engo ?</h1></summary>
   
 ### 1. Python Shell
@@ -254,9 +246,7 @@ Node(node_type=operator, value=OR)
 | **EVALUATE COMBINED RULES**   | `/evaluate-combined-rules` (POST) | Evaluate combined rules and return the result.             | - `rule_ids` (list of integers, required): IDs of rules to combine and evaluate. <br> - `data_for_evaluation` (object, required): Data to evaluate against. <br> - `use_most_freq_operator_heuristic` (integer, optional): Set to `1` to use heuristic. <br> - `custom_operator` (string, optional): Operator (`AND` or `OR`). <br> - `store_combined_rule` (boolean, optional): Store the combined rule. |
 | **DELETE RULE**               | `/rule/<rule_id>` (DELETE)    | Delete a rule by ID.                                         | - `rule_id` (integer, path): The unique identifier of the rule to delete.                              |
 | **RETRIEVE ALL RULES**        | `/all-rules` (GET)            | Retrieve all rules in the system.                            | None                                                                                                   |
-</details>
 
-<details>
 <summary><h1>✨ Snapshots of the UI</h1></summary>
 <table>
   <tr>
@@ -268,13 +258,7 @@ Node(node_type=operator, value=OR)
     <td><img width="700" alt="Screenshot 2024-10-21 at 1 34 01 AM" src="https://github.com/user-attachments/assets/d1d98b0d-4714-4aef-9a2b-3912b2d190b0"></td>
   </tr>
 </table>
-</details>
 
-
-
-
-
-<details>
 <summary><h1>🚀 Bonus</h1></summary>
 
 - The below table represents all the bonus features requested by Zeotap. All features have been implemented!
@@ -285,10 +269,10 @@ Node(node_type=operator, value=OR)
 | 2     | Implement validations for attributes to be part of a catalog. | While parsing the rule to an AST and modifying the AST, the engine checks if the attributes are part of<br>the `ATTRIBUTE_CATALOG`, in the absence of which, a custom exception is raised.                                                                                                                         | ✅         |
 | 3     | Modification of existing rules.                               | Rules can be modified by change of operator using the `node.change_operator()` API, change of operand (left and right operand values) using the `node.change_operand()` API and adding and removal of sub-expressions within the AST using `node.add_sub_expression()` and `node.remove_sub_expression()` APIs..   | ✅         |
 | 4     | User-defined functions within the rule language.              | Custom functions have been tested and implemented. For example: `calculate_bonus(experience)`: A function to calculate bonus using the experience, `get_minimum_age()`: Returns some fixed value. I have also added support for the functions: `min()`, `max()` and `abs()`.                                       | ✅         |
-</details>
 
 
-<details>
+
+
 <summary><h1>Testcases</h1></summary>
 
 - To view the tests in detail, navigate to `run-tests.py`.
@@ -308,6 +292,6 @@ Node(node_type=operator, value=OR)
 | 11    | AST Serialization and Deserialization                                  | ✅                    |
 | 12    | AST Serialization and Deserialization Complex                          | ✅                    |
 
-</details>
+
 
 *fin*
