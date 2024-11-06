@@ -1,6 +1,3 @@
-> [!TIP]  
-> 🌳 Click [here](https://github.com/karthik2603-theBrogrammer/Karthik-Namboori-Zeotap-SDE-Intern/blob/main/Realtime-Weather-Monitoring-System/README.md) for Real-Time Data Processing System for Weather Monitoring System assignment.
-
 # Engo: A Custom Rule Engine.
 
 
