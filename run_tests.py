@@ -5,14 +5,6 @@ import json
 import io
 import sys
 
-
-# from  .rule_engine_utils import (
-#     create_rule,
-#     evaluate_rule,
-#     combine_rules,
-#     get_json_from_ast,
-#     get_ast_from_json,
-# )
 from engine_utils import (
     create_rule,
     evaluate_rule,
